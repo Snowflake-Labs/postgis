@@ -294,7 +294,6 @@ union_related_pairs(
 
 			if (p != q && UF_find(uf, p) != UF_find(uf, q))
 			{
-				int geos_type = GEOSGeomTypeId(geoms[p]);
 				int geos_result;
 
 				if (prep == NULL)
