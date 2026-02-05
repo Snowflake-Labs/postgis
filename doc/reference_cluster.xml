@@ -302,14 +302,14 @@ FROM testdata;
       <refsection>
         <title>Description</title>
 
-        <para>A window function that builds connected clusters of geometries that intersect. Geomtries are addded to a cluster if they share a pairwise DE9IM relationship with another member of the cluster. With this function it is possible to build a cluster of all objects that touch at boundaries, but exclude those that merely overlap.</para>
+        <para>A window function that builds connected clusters of geometries that intersect. Geometries are added to a cluster if they share a pairwise DE9IM relationship with another member of the cluster. With this function it is possible to build a cluster of all objects that touch at boundaries, but exclude those that merely overlap.</para>
 
         <para role="availability" conformance="3.7.0">Availability: 3.7.0</para>
       </refsection>
 
       <refsection>
         <title>Examples</title>
-        <para>This collection of line strings would form a single cluster using <xref linkend="ST_ClusterIntersectingWin"/>, but using <xref linkend="ST_ClusterRelateWin"/> can be clustered into three groups that connect only via thier end points.</para>
+        <para>This collection of line strings would form a single cluster using <xref linkend="ST_ClusterIntersectingWin"/>, but using <xref linkend="ST_ClusterRelateWin"/> can be clustered into three groups that connect only via their end points.</para>
 
         <para>
           <informalfigure>
