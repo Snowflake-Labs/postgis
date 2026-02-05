@@ -155,7 +155,7 @@ query_accumulate(void* item, void* userdata)
 
 /* Identify intersecting geometries and mark them as being in the same set */
 int
-union_intersecting_pairs(const GEOSGeometry** geoms, uint32_t num_geoms, UNIONFIND* uf)
+union_intersecting_pairs(GEOSGeometry** geoms, uint32_t num_geoms, UNIONFIND* uf)
 {
 	uint32_t p, i;
 	struct STRTree tree;
@@ -247,7 +247,7 @@ union_intersecting_pairs(const GEOSGeometry** geoms, uint32_t num_geoms, UNIONFI
  */
 int
 union_related_pairs(
-	const GEOSGeometry** geoms,
+	GEOSGeometry** geoms,
 	uint32_t num_geoms,
 	const char* matrix,
 	UNIONFIND* uf)
@@ -337,7 +337,7 @@ union_related_pairs(
  *  array is a GeometryCollection representing a set of interconnected geometries. Caller is responsible for
  *  freeing the input array, but not for destroying the GEOSGeometry* items inside it.  */
 int
-cluster_intersecting(const GEOSGeometry** geoms, uint32_t num_geoms, GEOSGeometry*** clusterGeoms, uint32_t* num_clusters)
+cluster_intersecting(GEOSGeometry** geoms, uint32_t num_geoms, GEOSGeometry*** clusterGeoms, uint32_t* num_clusters)
 {
 	int cluster_success;
 	UNIONFIND* uf = UF_create(num_geoms);
